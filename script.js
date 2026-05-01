@@ -138,8 +138,26 @@ if (!isExactMatch) {
     nextLetter = 0;
 
     if (guessesRemaining === 0) {
-      alert(`The right word was: "${rightGuessString}"`);
+        setTimeout(() => {
+  guessesRemaining = NUMBER_OF_GUESSES;
+  currentGuess = [];
+  nextLetter = 0;
+
+  const rows = document.getElementsByClassName("letter-row");
+
+  for (let row of rows) {
+    for (let box of row.children) {
+      box.textContent = "";
+      box.style.backgroundColor = "";
+      box.classList.remove("filled-box");
     }
+  }
+
+  for (const key of document.getElementsByClassName("keyboard-button")) {
+    key.style.backgroundColor = "";
+  }
+          }, 800);
+}
   }
 }
 
@@ -159,10 +177,8 @@ function insertLetter(pressedKey) {
 }
 
 const animateCSS = (element, animation, prefix = "animate__") =>
-  // We create a Promise and return it
   new Promise((resolve, reject) => {
     const animationName = `${prefix}${animation}`;
-    // const node = document.querySelector(element);
     const node = element;
     node.style.setProperty("--animate-duration", "0.3s");
 
