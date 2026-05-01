@@ -138,7 +138,7 @@ if (!isExactMatch) {
     nextLetter = 0;
 
     if (guessesRemaining === 0) {
-        setTimeout(() => {
+        setTimeout(() => {          
   guessesRemaining = NUMBER_OF_GUESSES;
   currentGuess = [];
   nextLetter = 0;
