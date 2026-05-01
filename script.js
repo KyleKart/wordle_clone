@@ -156,7 +156,7 @@ if (!isExactMatch) {
   for (const key of document.getElementsByClassName("keyboard-button")) {
     key.style.backgroundColor = "";
   }
-          }, 1500);
+          }, 1800);
 }
   }
 }
