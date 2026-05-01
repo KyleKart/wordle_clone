@@ -138,8 +138,7 @@ if (!isExactMatch) {
     nextLetter = 0;
 
     if (guessesRemaining === 0) {
-      alert("You've run out of guesses! Game over!");
-      toastr.info(`The right word was: "${rightGuessString}"`);
+      alert(`The right word was: "${rightGuessString}"`);
     }
   }
 }
