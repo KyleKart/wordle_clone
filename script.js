@@ -62,12 +62,12 @@ function checkGuess() {
   }
 
   if (guessString.length != 5) {
-    toastr.error("Not enough letters!");
+    alert("Not enough letters!");
     return;
   }
 
   if (!WORDS.includes(guessString)) {
-    toastr.error("Word not in list!");
+    alert("Word not in list!");
     return;
   }
 
@@ -130,7 +130,6 @@ if (!isExactMatch) {
   }
 
   if (guessString === rightGuessString) {
-    toastr.success("You guessed right! Game over!");
     guessesRemaining = 0;
     return;
   } else {
@@ -139,7 +138,7 @@ if (!isExactMatch) {
     nextLetter = 0;
 
     if (guessesRemaining === 0) {
-      toastr.error("You've run out of guesses! Game over!");
+      alert("You've run out of guesses! Game over!");
       toastr.info(`The right word was: "${rightGuessString}"`);
     }
   }
