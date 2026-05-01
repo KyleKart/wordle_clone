@@ -95,9 +95,14 @@ function checkGuess() {
   }
 
   // 🔥 clear letters before revealing results
+const isExactMatch = guessString === rightGuessString;
+
+// only clear letters if NOT fully correct
+if (!isExactMatch) {
   for (let i = 0; i < 5; i++) {
     row.children[i].textContent = "";
   }
+}
 
   // render result
   for (let i = 0; i < 5; i++) {
