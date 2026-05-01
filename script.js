@@ -94,16 +94,6 @@ function checkGuess() {
     }
   }
 
-  // 🔥 clear letters before revealing results
-const isExactMatch = guessString === rightGuessString;
-
-// only clear letters if NOT fully correct
-if (!isExactMatch) {
-  for (let i = 0; i < 5; i++) {
-    row.children[i].textContent = "";
-  }
-}
-
   // render result
   for (let i = 0; i < 5; i++) {
     let box = row.children[i];
@@ -117,13 +107,17 @@ if (!isExactMatch) {
 
       box.style.backgroundColor = color;
 
-      if (color === "gray") {
-        // show wrong letters only
-        box.textContent = letter;
-      } else {
-        // hide correct/present letters
-        box.textContent = "";
-      }
+const isExactMatch = guessString === rightGuessString;
+
+if (isExactMatch) {
+  box.textContent = letter;
+} else {
+  if (color === "gray") {
+    box.textContent = letter;
+  } else {
+    box.textContent = "";
+  }
+}
 
       shadeKeyBoard(letter, color);
     }, delay);
