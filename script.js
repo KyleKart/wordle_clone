@@ -205,7 +205,7 @@ document.addEventListener("keyup", (e) => {
   }
 
   if (pressedKey === "Quit") {
-    alert(The right word was: "${rightGuessString}");
+    alert(`The right word was: "${rightGuessString}"`);
     return;
   }
 
