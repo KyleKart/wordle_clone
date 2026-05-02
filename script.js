@@ -204,6 +204,11 @@ document.addEventListener("keyup", (e) => {
     return;
   }
 
+  if (pressedKey === "Quit") {
+    alert(The right word was: "${rightGuessString}");
+    return;
+  }
+
   let found = pressedKey.match(/[a-z]/gi);
   if (!found || found.length > 1) {
     return;
